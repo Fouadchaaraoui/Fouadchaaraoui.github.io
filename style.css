@@ -95,3 +95,26 @@ div.desc {
     background-color: rgb(167, 144, 211);
 
 }
+.Pr_req{
+    margin : 0 20px ; 
+    justify-content: center;
+    border: #1b1717 solid 5px;
+    border-radius: 10px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+.btn_rq{
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    margin-top: 10px;
+    color: #000000;
+    border-radius: 10px;
+    background-color: rgb(223, 81, 159);
+    font-weight:900;
+    font-size:larger
+}
+.imgsimple{
+    margin: 10px;
+    max-width: 80%;
+}

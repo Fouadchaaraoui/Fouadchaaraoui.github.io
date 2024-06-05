@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>متجر الملابس</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
     <header>
@@ -18,21 +19,21 @@
         </nav>
     </header>
 
-    <section id="home">
+    <section id="home" data-aos="fade-up">
         <h2>مرحبًا بكم في متجرنا!</h2>
         <p>اكتشفوا أحدث الأزياء والموديلات.</p>
     </section>
 
     <section id="products">
-        <h2>منتجاتنا</h2>
-        <div class="product">
+        <h2 data-aos="fade-right">منتجاتنا</h2>
+        <div class="product" data-aos="zoom-in">
             <img src="product1.jpg" alt="منتج 1">
             <h3>اسم المنتج 1</h3>
             <p>وصف المنتج 1</p>
             <p>السعر: $25</p>
             <button>أضف إلى السلة</button>
         </div>
-        <div class="product">
+        <div class="product" data-aos="zoom-in">
             <img src="product2.jpg" alt="منتج 2">
             <h3>اسم المنتج 2</h3>
             <p>وصف المنتج 2</p>
@@ -42,7 +43,7 @@
         <!-- أضف المزيد من المنتجات حسب الحاجة -->
     </section>
 
-    <section id="contact">
+    <section id="contact" data-aos="fade-up">
         <h2>تواصل معنا</h2>
         <form>
             <label for="name">الاسم:</label>
@@ -59,6 +60,17 @@
         <p>&copy; 2024 متجر الملابس. جميع الحقوق محفوظة.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init();
+        });
+
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('تمت إضافة المنتج إلى السلة!');
+            });
+        });
+    </script>
 </body>
 </html>

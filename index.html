@@ -1,48 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="images/assets/shortcuticon.ico">
-    <title>SAVE US</title>
+    <title>متجر الملابس</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="mainpage">
-        <div class = "information">
-            <img class = "logo" src="images/assets/Logo.png" >
-        </div>
-        
-        <!--
-            <div class="categorie">
-            <ul class="gender">
-                <li><a class="FOR MEN">FOR MEN</a></li>
-                <li><a href="FOR WOMEN">FOR WOMEN</a></li>
-                <li><a href="FOR EVERYONE">FOR EVERYONE</a></li>
+    <header>
+        <h1>متجر الملابس</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#products">المنتجات</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
             </ul>
-            </div>
-            
-        -->
-        
+        </nav>
+    </header>
 
-        <div class="marchandise">
+    <section id="home">
+        <h2>مرحبًا بكم في متجرنا!</h2>
+        <p>اكتشفوا أحدث الأزياء والموديلات.</p>
+    </section>
 
-            <script>
-                const L = [90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90];
-                for (let index = 1; index <= 23; index++) {
-                    document.write('<div class="gallery"><a target="_blank" href=""><img src="images/marchandise/triko ('+index+').jpg" ></a><div class="desc">PRICE   : ' + L[index-1] + ' DH <br><a class="btn" href="https://api.whatsapp.com/send?phone=212643016949&text=مرحبا. أريد طلب المنتج  N.'+index+'">BUY NOW<b></a></div></div>');
-                }
-            </script>
-
-
-
+    <section id="products">
+        <h2>منتجاتنا</h2>
+        <div class="product">
+            <img src="product1.jpg" alt="منتج 1">
+            <h3>اسم المنتج 1</h3>
+            <p>وصف المنتج 1</p>
+            <p>السعر: $25</p>
+            <button>أضف إلى السلة</button>
         </div>
-        
-        
+        <div class="product">
+            <img src="product2.jpg" alt="منتج 2">
+            <h3>اسم المنتج 2</h3>
+            <p>وصف المنتج 2</p>
+            <p>السعر: $30</p>
+            <button>أضف إلى السلة</button>
+        </div>
+        <!-- أضف المزيد من المنتجات حسب الحاجة -->
+    </section>
 
-    </div>
-    <div class="Pr_req"><img class="imgsimple" src="images/assets/print.gif"><div class="desc">PRINTING CLOTHES <br><a class="btn_rq" href="https://api.whatsapp.com/send?phone=212718897077&amp;text=مرحبًا لدي طلب طباعة">SERVICE REQUEST</a></div></div>
+    <section id="contact">
+        <h2>تواصل معنا</h2>
+        <form>
+            <label for="name">الاسم:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">الرسالة:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">إرسال</button>
+        </form>
+    </section>
 
+    <footer>
+        <p>&copy; 2024 متجر الملابس. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

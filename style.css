@@ -7,8 +7,8 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f8f8f8;
-  color: #333;
+  background-color: #000; /* تغيير الخلفية إلى الأسود */
+  color: #fff; /* تغيير لون النص إلى الأبيض */
 }
 
 /* تنسيق الشعار */
@@ -37,14 +37,20 @@ body {
 }
 
 .product {
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: #1a1a1a; /* لون خلفية المنتج */
+  border: 1px solid #444; /* لون حدود المنتج */
   border-radius: 8px;
   width: 250px;
   margin: 10px;
   text-align: center;
   padding: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* ظل خفيف */
+  transition: transform 0.3s, box-shadow 0.3s; /* إضافة تأثيرات التحول */
+}
+
+.product:hover {
+  transform: scale(1.05); /* تكبير المنتج عند التمرير */
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3); /* زيادة الظل عند التمرير */
 }
 
 .product img {
@@ -61,7 +67,7 @@ body {
 .product p {
   font-size: 1.2em;
   margin-bottom: 15px;
-  color: #007BFF;
+  color: #007BFF; /* يبقى لون السعر أزرق */
 }
 
 .btn {

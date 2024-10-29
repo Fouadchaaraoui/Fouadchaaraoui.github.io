@@ -3,39 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DATECH Logo</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    /* تنسيق الشعار */
-    .logo {
-      display: flex;
-      align-items: center;
-      font-family: Arial, sans-serif;
-      font-size: 2em;
-      font-weight: bold;
-      color: #007BFF;
-    }
-
-    /* تنسيق الأيقونات */
-    .logo i {
-      margin: 0 5px;
-      color: #555;
-    }
-
-    /* تنسيق اسم DATECH */
-    .logo span {
-      color: #333;
-    }
-  </style>
+  <title>DATECH Store</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
   <!-- الشعار -->
-  <div class="logo">
-    <i class="fas fa-mobile-alt"></i> <!-- أيقونة الهاتف -->
-    <span>DATECH</span>
-    <i class="fas fa-laptop"></i> <!-- أيقونة الحاسوب -->
-  </div>
+  <header class="header">
+    <h1>DATECH Store</h1>
+    <p>أفضل وجهة لشراء الهواتف والحواسيب</p>
+  </header>
 
+  <!-- قائمة المنتجات -->
+  <section class="products">
+    <div class="product">
+      <img src="phone.jpg" alt="هاتف ذكي">
+      <h2>هاتف ذكي</h2>
+      <p>سعر: 2500 درهم</p>
+      <button class="btn">إضافة إلى السلة</button>
+    </div>
+    <div class="product">
+      <img src="laptop.jpg" alt="حاسوب محمول">
+      <h2>حاسوب محمول</h2>
+      <p>سعر: 7000 درهم</p>
+      <button class="btn">إضافة إلى السلة</button>
+    </div>
+    <!-- يمكنك إضافة المزيد من المنتجات هنا -->
+  </section>
+
+  <footer class="footer">
+    <p>© 2024 DATECH - جميع الحقوق محفوظة.</p>
+  </footer>
 </body>
 </html>

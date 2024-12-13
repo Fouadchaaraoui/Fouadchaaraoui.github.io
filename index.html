@@ -100,40 +100,33 @@
             border-radius: 8px;
             cursor: pointer;
             transition: transform 0.3s ease;
+            position: relative;
         }
 
         .product:hover {
             transform: scale(1.05);
         }
 
-        .contact-form {
+        .contact-button {
             display: none;
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-top: 30px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
-        .contact-form button {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
             background-color: #007bff;
             color: white;
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
-            border: none;
         }
 
-        .contact-form button:hover {
+        .contact-button a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .contact-button:hover {
             background-color: #0056b3;
         }
 
@@ -214,33 +207,34 @@
 
     <h2>Our Products</h2>
     <div class="products">
-        <div class="product" onclick="showContactForm()">
+        <div class="product" onclick="showContactButton(this)">
             <h3>Product 1</h3>
             <p>Description of Product 1</p>
+            <div class="contact-button">
+                <a href="tel:+212718528181">Contact Us</a>
+            </div>
         </div>
-        <div class="product" onclick="showContactForm()">
+        <div class="product" onclick="showContactButton(this)">
             <h3>Product 2</h3>
             <p>Description of Product 2</p>
+            <div class="contact-button">
+                <a href="tel:+212718528181">Contact Us</a>
+            </div>
         </div>
-        <div class="product" onclick="showContactForm()">
+        <div class="product" onclick="showContactButton(this)">
             <h3>Product 3</h3>
             <p>Description of Product 3</p>
+            <div class="contact-button">
+                <a href="tel:+212718528181">Contact Us</a>
+            </div>
         </div>
-        <div class="product" onclick="showContactForm()">
+        <div class="product" onclick="showContactButton(this)">
             <h3>Product 4</h3>
             <p>Description of Product 4</p>
+            <div class="contact-button">
+                <a href="tel:+212718528181">Contact Us</a>
+            </div>
         </div>
-    </div>
-
-    <div class="contact-form" id="contactForm">
-        <h2>Contact Us</h2>
-        <p>Please fill in the details below to get in touch with us.</p>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="4" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
     </div>
 </section>
 
@@ -249,8 +243,16 @@
 </footer>
 
 <script>
-    function showContactForm() {
-        document.getElementById('contactForm').style.display = 'block';
+    function showContactButton(product) {
+        // Hide any other contact button
+        var buttons = document.querySelectorAll('.contact-button');
+        buttons.forEach(function(button) {
+            button.style.display = 'none';
+        });
+
+        // Show the contact button for the clicked product
+        var contactButton = product.querySelector('.contact-button');
+        contactButton.style.display = 'block';
     }
 </script>
 

@@ -1,3 +1,9 @@
+لتضمين صور في المنتجات مع النصوص، يمكننا تعديل الكود الحالي لإضافة صورة لكل منتج. سنضيف عنصر <img> داخل كل منتج لعرض الصورة الخاصة به. يمكنك تحديد المسار الصحيح للصورة داخل src في كل عنصر <img>.
+
+إليك التعديل المطلوب لإضافة صور إلى المنتجات:
+
+الكود المعدل:
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -107,6 +113,13 @@
             transform: scale(1.05);
         }
 
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
         .contact-button {
             display: none;
             position: absolute;
@@ -208,6 +221,7 @@
     <h2>Our Products</h2>
     <div class="products">
         <div class="product" onclick="showContactButton(this)">
+            <img src="product1.jpg" alt="Product 1">
             <h3>Product 1</h3>
             <p>Description of Product 1</p>
             <div class="contact-button">
@@ -215,6 +229,7 @@
             </div>
         </div>
         <div class="product" onclick="showContactButton(this)">
+            <img src="product2.jpg" alt="Product 2">
             <h3>Product 2</h3>
             <p>Description of Product 2</p>
             <div class="contact-button">
@@ -222,6 +237,7 @@
             </div>
         </div>
         <div class="product" onclick="showContactButton(this)">
+            <img src="product3.jpg" alt="Product 3">
             <h3>Product 3</h3>
             <p>Description of Product 3</p>
             <div class="contact-button">
@@ -229,6 +245,7 @@
             </div>
         </div>
         <div class="product" onclick="showContactButton(this)">
+            <img src="product4.jpg" alt="Product 4">
             <h3>Product 4</h3>
             <p>Description of Product 4</p>
             <div class="contact-button">
@@ -258,3 +275,15 @@
 
 </body>
 </html>
+
+التعديلات التي تمت:
+	1.	إضافة الصور: تم إضافة عنصر <img> لكل منتج مع تحديد المسار الصحيح للصورة (مثال: product1.jpg, product2.jpg).
+	•	تأكد من أن الصور موجودة في نفس مجلد HTML أو تعديل المسار إذا كانت في مجلد آخر.
+	•	يمكن تغيير النص داخل alt إلى وصف دقيق لكل صورة.
+	2.	التنسيق:
+	•	تم ضبط عرض الصور إلى 100% من عرض العنصر الذي يحتوي عليها لضمان أن الصورة تتناسب مع حجم المنتج.
+	•	الهامش السفلي تم إضافته للصور (margin-bottom: 15px) لجعل النص أسفل الصورة يبدو منسقًا بشكل جيد.
+
+كيفية العمل:
+	•	الصور ستظهر داخل المنتجات وتتكيف تلقائيًا مع الأبعاد المناسبة.
+	•	عند الضغط على أي منتج، سيظهر زر “تواصل معنا” في الجزء العلوي من هذا المنتج.

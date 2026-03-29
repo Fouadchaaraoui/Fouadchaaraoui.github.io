@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - Grand Horizon</title>
+
+<link rel="stylesheet" href="assests/css/style.css">
+<link rel="stylesheet" href="assests/css/fontawesome/css/all.css">
+
+</head>
+<body class="dashboard-page" data-protected="true">
+
+<div class="app">
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fas fa-hotel"></i>
+            <span>Grand Horizon</span>
+        </div>
+
+        <ul class="menu">
+            <li class="active"><a href="index.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+            <li><a href="rooms.html"><i class="fas fa-bed"></i> Rooms</a></li>
+            <li><a href="bookings.html"><i class="fas fa-calendar-check"></i> Bookings</a></li>
+            <li><a href="customers.html"><i class="fas fa-users"></i> Customers</a></li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+
+        <div class="logout">
+            <a class="logout-link" href="auth/login.html">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </div>
+
+    </aside>
+
+    <div class="main">
+
+        <header class="topbar">
+            <button id="toggleSidebar"><i class="fas fa-bars"></i></button>
+            <h2>Dashboard Overview</h2>
+            <div class="topbar-meta" id="liveDateTime">--</div>
+        </header>
+
+        <section class="content">
+            <div class="dash-bg" aria-hidden="true">
+                <span class="orb orb-a"></span>
+                <span class="orb orb-b"></span>
+                <span class="orb orb-c"></span>
+                <span class="grid-lines"></span>
+            </div>
+            <div class="dashboard-hero">
+                <div>
+                    <p class="hero-eyebrow">Grand Horizon Control Center</p>
+                    <h1>Welcome back, Hotel Admin</h1>
+                    <p class="hero-text">Track rooms, bookings, and revenue from one clear dashboard.</p>
+                </div>
+                <a class="hero-link" href="bookings.html">
+                    <i class="fas fa-plus-circle"></i> Create Booking
+                </a>
+            </div>
+
+            <div class="dashboard-layout">
+                <div class="cards">
+                    <div class="card">
+                        <i class="fas fa-bed"></i>
+                        <h3 id="metricRooms">0</h3>
+                        <p>Total Rooms</p>
+                    </div>
+
+                    <div class="card">
+                        <i class="fas fa-calendar-check"></i>
+                        <h3 id="metricBookings">0</h3>
+                        <p>Active Bookings</p>
+                    </div>
+
+                    <div class="card">
+                        <i class="fas fa-users"></i>
+                        <h3 id="metricCustomers">0</h3>
+                        <p>Customers</p>
+                    </div>
+
+                    <div class="card">
+                        <i class="fas fa-dollar-sign"></i>
+                        <h3 id="metricRevenue">$0</h3>
+                        <p>Revenue</p>
+                    </div>
+                </div>
+
+                <div class="panel pulse-panel">
+                    <h3 class="panel-title">Today Highlights</h3>
+                    <ul class="highlight-list">
+                        <li><i class="fas fa-star"></i> VIP arrivals expected: <strong>3</strong></li>
+                        <li><i class="fas fa-clock"></i> Check-ins pending: <strong>7</strong></li>
+                        <li><i class="fas fa-broom"></i> Rooms to service: <strong>5</strong></li>
+                        <li><i class="fas fa-bell"></i> Front desk alerts: <strong>2</strong></li>
+                    </ul>
+                    <a class="panel-link" href="rooms.html">Open Room Manager <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="insight-grid">
+                <div class="panel insight-panel">
+                    <h3 class="panel-title">Performance Snapshot</h3>
+                    <div class="kpi-list">
+                        <div class="kpi-item">
+                            <div class="kpi-head">
+                                <span>Occupancy</span>
+                                <strong id="insightOccupancy">0%</strong>
+                            </div>
+                            <div class="kpi-track"><span id="insightOccupancyBar"></span></div>
+                        </div>
+                        <div class="kpi-item">
+                            <div class="kpi-head">
+                                <span>VIP Guests</span>
+                                <strong id="insightVip">0%</strong>
+                            </div>
+                            <div class="kpi-track"><span id="insightVipBar"></span></div>
+                        </div>
+                        <div class="kpi-item">
+                            <div class="kpi-head">
+                                <span>Avg. Stay</span>
+                                <strong id="insightStay">0 nights</strong>
+                            </div>
+                            <div class="kpi-track"><span id="insightStayBar"></span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h3 class="panel-title">Recent Bookings</h3>
+                    <table class="table compact-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Guest</th>
+                                <th>Room</th>
+                                <th>Check-in</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentBookingsBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/apps.js"></script>
+
+</body>
+</html>

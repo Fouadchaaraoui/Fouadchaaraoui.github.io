@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings - Grand Horizon</title>
+<link rel="stylesheet" href="assests/css/style.css">
+<link rel="stylesheet" href="assests/css/fontawesome/css/all.css">
+</head>
+<body data-protected="true">
+<div class="app">
+    <aside class="sidebar">
+        <div class="logo">
+            <i class="fas fa-hotel"></i>
+            <span>Grand Horizon</span>
+        </div>
+
+        <ul class="menu">
+            <li><a href="index.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+            <li><a href="rooms.html"><i class="fas fa-bed"></i> Rooms</a></li>
+            <li><a href="bookings.html"><i class="fas fa-calendar-check"></i> Bookings</a></li>
+            <li><a href="customers.html"><i class="fas fa-users"></i> Customers</a></li>
+            <li class="active"><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+
+        <div class="logout">
+            <a class="logout-link" href="auth/login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </aside>
+
+    <div class="main">
+        <header class="topbar">
+            <button id="toggleSidebar"><i class="fas fa-bars"></i></button>
+            <h2>Settings</h2>
+        </header>
+
+        <section class="content">
+            <div class="page-header">
+                <div class="section-intro">
+                    <p class="section-kicker">Configuration</p>
+                    <h3 class="section-title">Hotel Settings</h3>
+                    <p class="section-note">Tune your property profile, operations defaults, and workflow preferences.</p>
+                </div>
+                <div class="stat-strip">
+                    <span class="stat-chip"><i class="fas fa-sliders-h"></i> System Controls</span>
+                    <span class="stat-chip"><i class="fas fa-shield-alt"></i> Security Ready</span>
+                </div>
+            </div>
+
+            <div class="settings-layout">
+                <div class="panel">
+                    <h3 class="panel-title">Hotel Preferences</h3>
+                    <form id="settingsForm" class="settings-form">
+                        <label>
+                            Hotel Name
+                            <input id="settingsHotelName" type="text" value="Grand Horizon">
+                        </label>
+                        <label>
+                            Contact Email
+                            <input id="settingsContactEmail" type="email" value="info@grandhorizon.com">
+                        </label>
+                        <label>
+                            Currency
+                            <select id="settingsCurrency">
+                                <option selected>USD</option>
+                                <option>EUR</option>
+                                <option>GBP</option>
+                            </select>
+                        </label>
+                        <button id="settingsSaveBtn" type="submit" class="primary-btn">Save Changes</button>
+                    </form>
+                </div>
+
+                <div class="panel">
+                    <h3 class="panel-title">Operational Toggles</h3>
+                    <div class="toggle-list">
+                        <label class="toggle-item">
+                            <span>
+                                <strong>Auto-confirm bookings</strong>
+                                <small>Approve reservations instantly when data is valid.</small>
+                            </span>
+                            <input id="settingsAutoConfirm" type="checkbox" checked>
+                        </label>
+                        <label class="toggle-item">
+                            <span>
+                                <strong>VIP arrival alerts</strong>
+                                <small>Show notifications for upcoming VIP check-ins.</small>
+                            </span>
+                            <input id="settingsVipAlerts" type="checkbox" checked>
+                        </label>
+                        <label class="toggle-item">
+                            <span>
+                                <strong>Maintenance reminders</strong>
+                                <small>Flag rooms that need inspection after checkout.</small>
+                            </span>
+                            <input id="settingsMaintenanceReminders" type="checkbox">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/apps.js"></script>
+</body>
+</html>

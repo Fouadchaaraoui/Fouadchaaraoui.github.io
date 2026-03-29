@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bookings - Grand Horizon</title>
+<link rel="stylesheet" href="assests/css/style.css">
+<link rel="stylesheet" href="assests/css/fontawesome/css/all.css">
+</head>
+<body data-protected="true">
+<div class="app">
+    <aside class="sidebar">
+        <div class="logo">
+            <i class="fas fa-hotel"></i>
+            <span>Grand Horizon</span>
+        </div>
+
+        <ul class="menu">
+            <li><a href="index.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+            <li><a href="rooms.html"><i class="fas fa-bed"></i> Rooms</a></li>
+            <li class="active"><a href="bookings.html"><i class="fas fa-calendar-check"></i> Bookings</a></li>
+            <li><a href="customers.html"><i class="fas fa-users"></i> Customers</a></li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+
+        <div class="logout">
+            <a class="logout-link" href="auth/login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </aside>
+
+    <div class="main">
+        <header class="topbar">
+            <button id="toggleSidebar"><i class="fas fa-bars"></i></button>
+            <h2>Bookings</h2>
+        </header>
+
+        <section class="content">
+            <div class="page-header">
+                <div class="section-intro">
+                    <p class="section-kicker">Front Desk</p>
+                    <h3 class="section-title">Reservations</h3>
+                    <p class="section-note">Control guest stays, avoid conflicts, and keep occupancy smooth.</p>
+                </div>
+                <div class="stat-strip">
+                    <span class="stat-chip"><i class="fas fa-calendar-check"></i> Booking Flow</span>
+                    <span class="stat-chip"><i class="fas fa-shield"></i> Conflict Guard</span>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-head">
+                    <h4>Reservation Desk</h4>
+                    <p>Assign guest and room, then set the stay period.</p>
+                </div>
+
+                <div class="toolbar-row">
+                    <input id="bookingsSearch" type="text" placeholder="Search booking ID, guest, or room">
+                    <span class="stat-chip"><i class="fas fa-filter"></i> Live Search</span>
+                </div>
+
+                <form id="bookingForm" class="inline-form">
+                    <input id="bookingEditId" type="hidden">
+                    <select id="bookingCustomer" required>
+                        <option value="">Customer</option>
+                    </select>
+                    <select id="bookingRoom" required>
+                        <option value="">Room</option>
+                    </select>
+                    <input id="bookingCheckIn" type="date" required>
+                    <input id="bookingCheckOut" type="date" required>
+                    <button id="bookingSubmitBtn" type="submit" class="primary-btn">New Booking</button>
+                    <button id="bookingCancelBtn" type="button" class="secondary-btn">Cancel</button>
+                </form>
+
+                <div class="table-shell">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Booking ID</th>
+                                <th>Guest</th>
+                                <th>Room</th>
+                                <th>Check-in</th>
+                                <th>Check-out</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bookingsTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/apps.js"></script>
+</body>
+</html>

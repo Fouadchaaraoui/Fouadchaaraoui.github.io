@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rooms - Grand Horizon</title>
+<link rel="stylesheet" href="assests/css/style.css">
+<link rel="stylesheet" href="assests/css/fontawesome/css/all.css">
+</head>
+<body data-protected="true">
+<div class="app">
+    <aside class="sidebar">
+        <div class="logo">
+            <i class="fas fa-hotel"></i>
+            <span>Grand Horizon</span>
+        </div>
+
+        <ul class="menu">
+            <li><a href="index.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+            <li class="active"><a href="rooms.html"><i class="fas fa-bed"></i> Rooms</a></li>
+            <li><a href="bookings.html"><i class="fas fa-calendar-check"></i> Bookings</a></li>
+            <li><a href="customers.html"><i class="fas fa-users"></i> Customers</a></li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+
+        <div class="logout">
+            <a class="logout-link" href="auth/login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </aside>
+
+    <div class="main">
+        <header class="topbar">
+            <button id="toggleSidebar"><i class="fas fa-bars"></i></button>
+            <h2>Rooms</h2>
+        </header>
+
+        <section class="content">
+            <div class="page-header">
+                <div class="section-intro">
+                    <p class="section-kicker">Operations</p>
+                    <h3 class="section-title">Room Inventory</h3>
+                    <p class="section-note">Manage categories, availability, and nightly pricing in one place.</p>
+                </div>
+                <div class="stat-strip">
+                    <span class="stat-chip"><i class="fas fa-bed"></i> Inventory Board</span>
+                    <span class="stat-chip"><i class="fas fa-magic"></i> Smart Status</span>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-head">
+                    <h4>Room Editor</h4>
+                    <p>Create new rooms or update existing ones instantly.</p>
+                </div>
+
+                <div class="toolbar-row">
+                    <input id="roomsSearch" type="text" placeholder="Search room number or type">
+                    <select id="roomsStatusFilter">
+                        <option value="">All Status</option>
+                        <option>Available</option>
+                        <option>Occupied</option>
+                        <option>Maintenance</option>
+                    </select>
+                </div>
+
+                <form id="roomForm" class="inline-form">
+                    <input id="roomEditId" type="hidden">
+                    <input id="roomNumber" type="text" placeholder="Room #" required>
+                    <select id="roomType" required>
+                        <option value="">Type</option>
+                        <option>Standard</option>
+                        <option>Deluxe</option>
+                        <option>Suite</option>
+                    </select>
+                    <select id="roomStatus" required>
+                        <option value="">Status</option>
+                        <option>Available</option>
+                        <option>Occupied</option>
+                        <option>Maintenance</option>
+                    </select>
+                    <input id="roomPrice" type="number" min="1" placeholder="Price" required>
+                    <button id="roomSubmitBtn" type="submit" class="primary-btn">Add Room</button>
+                    <button id="roomCancelBtn" type="button" class="secondary-btn">Cancel</button>
+                </form>
+
+                <div class="table-shell">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Room</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Price/Night</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="roomsTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/apps.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customers - Grand Horizon</title>
+<link rel="stylesheet" href="assests/css/style.css">
+<link rel="stylesheet" href="assests/css/fontawesome/css/all.css">
+</head>
+<body data-protected="true">
+<div class="app">
+    <aside class="sidebar">
+        <div class="logo">
+            <i class="fas fa-hotel"></i>
+            <span>Grand Horizon</span>
+        </div>
+
+        <ul class="menu">
+            <li><a href="index.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+            <li><a href="rooms.html"><i class="fas fa-bed"></i> Rooms</a></li>
+            <li><a href="bookings.html"><i class="fas fa-calendar-check"></i> Bookings</a></li>
+            <li class="active"><a href="customers.html"><i class="fas fa-users"></i> Customers</a></li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+
+        <div class="logout">
+            <a class="logout-link" href="auth/login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </aside>
+
+    <div class="main">
+        <header class="topbar">
+            <button id="toggleSidebar"><i class="fas fa-bars"></i></button>
+            <h2>Customers</h2>
+        </header>
+
+        <section class="content">
+            <div class="page-header">
+                <div class="section-intro">
+                    <p class="section-kicker">Guests</p>
+                    <h3 class="section-title">Guest Directory</h3>
+                    <p class="section-note">Maintain your customer list and guest tiers with clean, quick access.</p>
+                </div>
+                <div class="stat-strip">
+                    <span class="stat-chip"><i class="fas fa-users"></i> Guest Records</span>
+                    <span class="stat-chip"><i class="fas fa-star"></i> VIP Tracking</span>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-head">
+                    <h4>Customer Editor</h4>
+                    <p>Add guests and maintain contact profiles for repeat bookings.</p>
+                </div>
+
+                <div class="toolbar-row">
+                    <input id="customersSearch" type="text" placeholder="Search by name, email, or phone">
+                    <select id="customersStatusFilter">
+                        <option value="">All Status</option>
+                        <option>Regular</option>
+                        <option>VIP</option>
+                    </select>
+                </div>
+
+                <form id="customerForm" class="inline-form">
+                    <input id="customerEditId" type="hidden">
+                    <input id="customerName" type="text" placeholder="Full name" required>
+                    <input id="customerEmail" type="email" placeholder="Email" required>
+                    <input id="customerPhone" type="text" placeholder="Phone" required>
+                    <select id="customerStatus" required>
+                        <option value="">Status</option>
+                        <option>Regular</option>
+                        <option>VIP</option>
+                    </select>
+                    <button id="customerSubmitBtn" type="submit" class="primary-btn">Add Customer</button>
+                    <button id="customerCancelBtn" type="button" class="secondary-btn">Cancel</button>
+                </form>
+
+                <div class="table-shell">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="customersTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/apps.js"></script>
+</body>
+</html>

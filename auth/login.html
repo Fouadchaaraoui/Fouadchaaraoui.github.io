@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Grand Horizon</title>
+
+<link rel="stylesheet" href="../assests/css/auth.css">
+<link rel="stylesheet" href="../assests/css/fontawesome/css/all.css">
+
+</head>
+<body class="auth-body">
+
+<div class="auth-wrapper">
+    <section class="auth-scene">
+        <p class="scene-tag">Signature Service</p>
+        <h1>Meet Astra, Your Virtual Concierge</h1>
+        <p class="scene-copy">Astra watches arrivals, room flow, and VIP moments so your front desk feels first-class every hour.</p>
+
+        <div class="concierge">
+            <div class="concierge-halo"></div>
+            <div class="concierge-head">
+                <span class="eye"></span>
+                <span class="eye"></span>
+            </div>
+            <div class="concierge-body"></div>
+            <div class="concierge-badge"><i class="fas fa-key"></i></div>
+        </div>
+
+        <div class="scene-bullets">
+            <span><i class="fas fa-concierge-bell"></i> Fast check-in flow</span>
+            <span><i class="fas fa-star"></i> Premium guest experience</span>
+            <span><i class="fas fa-chart-line"></i> Smart occupancy insights</span>
+        </div>
+    </section>
+
+    <div class="auth-card">
+
+        <div class="auth-header">
+            <i class="fas fa-door-open"></i>
+            <h2>Welcome Back</h2>
+            <p>Sign in to your Grand Horizon control suite</p>
+        </div>
+
+        <form id="loginForm">
+
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input id="loginEmail" type="email" placeholder="Email Address" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input id="loginPassword" type="password" placeholder="Password" required>
+            </div>
+
+            <button type="submit" class="auth-btn">
+                <i class="fas fa-sign-in-alt"></i> Login
+            </button>
+
+        </form>
+
+        <div class="auth-footer">
+            Don't have an account?
+            <a href="register.html">Register</a>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../js/auth.js"></script>
+</body>
+</html>

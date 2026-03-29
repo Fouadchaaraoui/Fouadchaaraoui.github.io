@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register - Grand Horizon</title>
+
+<link rel="stylesheet" href="../assests/css/auth.css">
+<link rel="stylesheet" href="../assests/css/fontawesome/css/all.css">
+
+</head>
+<body class="auth-body">
+
+<div class="auth-wrapper">
+    <section class="auth-scene">
+        <p class="scene-tag">Hospitality Identity</p>
+        <h1>Build Your Hotel Command Profile</h1>
+        <p class="scene-copy">Create your team account and let Astra coordinate guests, bookings, and room operations in one place.</p>
+
+        <div class="concierge">
+            <div class="concierge-halo"></div>
+            <div class="concierge-head">
+                <span class="eye"></span>
+                <span class="eye"></span>
+            </div>
+            <div class="concierge-body"></div>
+            <div class="concierge-badge"><i class="fas fa-crown"></i></div>
+        </div>
+
+        <div class="scene-bullets">
+            <span><i class="fas fa-users"></i> Team-based access</span>
+            <span><i class="fas fa-bed"></i> Real-time room control</span>
+            <span><i class="fas fa-shield-alt"></i> Secure hotel operations</span>
+        </div>
+    </section>
+
+    <div class="auth-card">
+
+        <div class="auth-header">
+            <i class="fas fa-id-card"></i>
+            <h2>Create Account</h2>
+            <p>Start your Grand Horizon management experience</p>
+        </div>
+
+        <form id="registerForm">
+
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input id="registerName" type="text" placeholder="Full Name" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input id="registerEmail" type="email" placeholder="Email Address" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input id="registerPassword" type="password" placeholder="Password" required>
+            </div>
+
+            <button type="submit" class="auth-btn">
+                <i class="fas fa-user-check"></i> Register
+            </button>
+
+        </form>
+
+        <div class="auth-footer">
+            Already have an account?
+            <a href="login.html">Login</a>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../js/auth.js"></script>
+</body>
+</html>

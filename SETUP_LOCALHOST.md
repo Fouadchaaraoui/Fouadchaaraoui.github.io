@@ -17,8 +17,8 @@ Default values are:
 - host: `127.0.0.1`
 - port: `3306`
 - db: `hotel_booking`
-- user: `root@gmail.com`
-- pass: `root`
+- user: `root`
+- pass: ``
 
 ## 3. Run project in Laragon
 1. Ensure Apache + MySQL are running.
@@ -28,7 +28,7 @@ Default values are:
 
 ## 4. Default login
 The API auto-creates an admin account on first auth request:
-- Email: `admin@gmail.com`
+- Email: `admin@grandhorizon.com`
 - Password: `admin123`
 
 ## 5. API endpoints created

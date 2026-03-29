@@ -19,7 +19,7 @@ $stmt->execute(['email' => $email]);
 $user = $stmt->fetch();
 
 // Safety fallback: guarantee default admin login works even if DB hash is broken/outdated.
-if ($email === 'admin@gmail.com' && $password === 'admin123' && (!$user || !password_verify($password, (string)($user['password_hash'] ?? '')))) {
+if ($email === 'admin@grandhorizon.com' && $password === 'admin123' && (!$user || !password_verify($password, (string)($user['password_hash'] ?? '')))) {
     $pdo = db();
     if ($user) {
         $update = $pdo->prepare('UPDATE users SET name = :name, password_hash = :password_hash, role = :role WHERE id = :id');
@@ -35,7 +35,7 @@ if ($email === 'admin@gmail.com' && $password === 'admin123' && (!$user || !pass
         );
         $insert->execute([
             'name' => 'Admin',
-            'email' => 'admin@gmail.com',
+            'email' => 'admin@grandhorizon.com',
             'password_hash' => password_hash('admin123', PASSWORD_DEFAULT),
             'role' => 'admin',
         ]);

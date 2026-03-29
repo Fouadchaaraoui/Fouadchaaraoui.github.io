@@ -17,8 +17,8 @@ Default values are:
 - host: `127.0.0.1`
 - port: `3306`
 - db: `hotel_booking`
-- user: `root`
-- pass: ``
+- user: `root@gmail.com`
+- pass: `root`
 
 ## 3. Run project in Laragon
 1. Ensure Apache + MySQL are running.
